@@ -316,10 +316,7 @@ function useSfx() {
     osc.frequency.value = freq;
 
     gain.gain.setValueAtTime(0.0001, ctx.currentTime);
-    gain.gain.exponentialRampToValueAtTime(
-      gainVal,
-      ctx.currentTime + 0.01
-    );
+    gain.gain.exponentialRampToValueAtTime(gainVal, ctx.currentTime + 0.01);
     gain.gain.exponentialRampToValueAtTime(
       0.0001,
       ctx.currentTime + ms / 1000
@@ -448,8 +445,8 @@ async function requestFullscreen() {
 export default function Page() {
   const sfx = useSfx();
 
-  // ✅ كلمة مرور
-  const correctPassword = "A790";
+  // ✅ كلمة مرور (تم تغييرها إلى A7901)
+  const correctPassword = "A7901";
   const [allowed, setAllowed] = useState(false);
   const [password, setPassword] = useState("");
   const [pwError, setPwError] = useState<string | null>(null);
@@ -629,7 +626,6 @@ export default function Page() {
                       }
                     }
                   }}
-                  placeholder="مثال: A790"
                   className="w-full rounded-2xl px-4 py-4 text-black outline-none text-lg"
                   style={{
                     background: "rgba(255,255,255,0.92)",
